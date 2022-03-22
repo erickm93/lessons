@@ -45,6 +45,14 @@ RSpec.describe 'provider_by_state' do
     end
   end
 
+  xcontext 'when providers only contains Home Entry' do
+    # missing description?
+  end
+
+  xcontext 'when providers contains Home Entry and Road-Tec' do
+    # what is the priority with this 2 providers?
+  end
+
   context 'when providers contains ABC and Road-Tec' do
     let(:providers) { [abc_provider, road_tec_provider] }
 
@@ -72,6 +80,7 @@ RSpec.describe 'provider_by_state' do
     let(:providers) { [abc_provider, road_tec_provider, home_entry_provider] }
 
     # If this exception occurs, we should update the code to handle it better.
+    # should we change something in the code?
     it { expect { subject }.to raise_error(MultipleProvidersError) }
   end
 
@@ -79,6 +88,7 @@ RSpec.describe 'provider_by_state' do
     let(:providers) { [abc_provider, road_tec_provider, home_entry_provider, OpenStruct.new] }
 
     # If this exception occurs, we should update the code to handle it better.
+    # should we change something in the code?
     it { expect { subject }.to raise_error(MultipleProvidersError) }
   end
 
